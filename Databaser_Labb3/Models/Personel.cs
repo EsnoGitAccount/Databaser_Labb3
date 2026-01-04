@@ -15,6 +15,12 @@ public partial class Personel
 
     public string PhoneNumber { get; set; } = null!;
 
+    public DateOnly? StartDate { get; set; }
+
+    public DateOnly? QuitDate { get; set; }
+
+    public int? MonthlySalary { get; set; }
+
     public virtual ICollection<Class> Classes { get; set; } = new List<Class>();
 
     public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
