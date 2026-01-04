@@ -11,6 +11,10 @@ public partial class Course
 
     public int? TeacherId { get; set; }
 
+    public DateOnly? StartDate { get; set; }
+
+    public DateOnly? EndDate { get; set; }
+
     public virtual ICollection<Grade> Grades { get; set; } = new List<Grade>();
 
     public virtual ICollection<JunctionCourseAssignment> JunctionCourseAssignments { get; set; } = new List<JunctionCourseAssignment>();

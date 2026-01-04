@@ -24,10 +24,12 @@ namespace Databaser_Labb3
                     {
                         case 1:
                             ShowCourses(context);
+                            Console.WriteLine();
                             break;
 
                         case 2:
                             ShowActiveCourses(context);
+                            Console.WriteLine();
                             break;
 
                         case 3:
@@ -43,15 +45,26 @@ namespace Databaser_Labb3
 
         private static void ShowCourses(SchoolDbContext context)
         {
+            Console.WriteLine("Showing all courses");
             var allCourse = context.Courses.ToList();
             foreach (var course in allCourse)
             {
-                Console.WriteLine($"Course Id: {course.Id}| Course name: {course.CourseName}");
+                Console.WriteLine($"Course Id: {course.Id} | Course name: {course.CourseName}");
             }
         }
         private static void ShowActiveCourses(SchoolDbContext context)
         {
-            var activeCourses = context.Courses.Where(c => c.).ToList();
+            Console.WriteLine("Showing all courses currently running:");
+            var activeCourses = context.Courses.Where(c => c.StartDate <= DateOnly.FromDateTime(DateTime.Now) && c.EndDate >= DateOnly.FromDateTime(DateTime.Now)).ToList();
+
+            if (activeCourses.Count() > 0)
+            {
+                foreach (var course in activeCourses)
+                {
+                    Console.WriteLine($"Course Id: {course.Id} | Course name: {course.CourseName}");
+                }
+            }
+            else { Console.WriteLine("There are no courses currently running"); }
         }
     }
 }

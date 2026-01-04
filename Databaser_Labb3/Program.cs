@@ -21,7 +21,8 @@ namespace Databaser_Labb3
                 Console.WriteLine("1. Students\n" +
                                     "2. Personel\n" +
                                     "3. Courses\n" +
-                                    "4. Quit");
+                                    "4. Grades\n" +
+                                    "5. Quit");
 
                 if (int.TryParse(Console.ReadLine(), out int input) && input >= 1 && input <= 4)
                 {
@@ -36,9 +37,14 @@ namespace Databaser_Labb3
                             break;
 
                         case 3:
+                            CourseMenu.CourseMenuOptions();
                             break;
 
                         case 4:
+                            GradesMenu.GradesMenuOptions();
+                            break;
+
+                        case 5:
                             mainLoop = false;
                             break;
                     }
