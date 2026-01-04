@@ -24,7 +24,7 @@ namespace Databaser_Labb3
                                     "4. Grades\n" +
                                     "5. Quit");
 
-                if (int.TryParse(Console.ReadLine(), out int input) && input >= 1 && input <= 4)
+                if (int.TryParse(Console.ReadLine(), out int input) && input >= 1 && input <= 5)
                 {
                     switch (input)
                     {

@@ -19,7 +19,7 @@ namespace Databaser_Labb3
                                     "3. Add personel\n" +
                                     "4. Return to main menu");
 
-                if (int.TryParse(Console.ReadLine(), out int input) && input >= 1 && input <= 6)
+                if (int.TryParse(Console.ReadLine(), out int input) && input >= 1 && input <= 4)
                 {
                     switch (input)
                     {
